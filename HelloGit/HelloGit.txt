@@ -1,0 +1,47 @@
+Pt 1. from https://docs.github.com/en/get-started/git-basics/set-up-git
+
+1. Download git for device at
+  https://git-scm.com/downloads
+  
+2. Install git with options
+  minty (instead of win console if available)
+   * Optionally change git bash's startup folder via it's shortcut
+  
+3. Setup git (bash, not github) username
+  Open git Bash
+    $ git config --global user.name "<username>"
+    $ git config --global user.email "email@server.com"
+    $ ssh-keygen -t rsa -C "email@server.com"
+  Optionally check
+    $ git config --global user.name
+
+4. Connect to your repo
+  * If you do not have a repo, make one via github's website
+  $ remote add <repo-name> <repo-web-location>
+  EX:
+    $ git remote add origin https://github.com/Void-Star-Coding/HelloUniverse
+ 
+5. Connect git bash to your github account
+    connect to github.com -> Click profile in top right -> settings -> scroll down to Developer Settings
+    On the left side, click Personal access tokens -> Tokens (classic)
+    Top right click Generate new token
+      https://github.com/settings/tokens
+      * One may consider fine-grained tokens
+    After generating the token, DON'T LOSE IT, copy the PAT
+    In git bash:
+      $ git remote set-url <repo-name> <token-web-location>:<your-copied-PAT>@github.com/<repo-web-location>
+    Ex:
+      $ git remote set-url origin https://Void-Star-Coding:???@github.com/Void-Star-Coding/HelloUniverse
+
+6. Fetch the repo
+  $ git fetch origin
+  * Optionally switch to main branch
+    $git switch main
+    $git branch
+
+7. Pulling
+  $ git pull origin
+  
+8. Pushing
+  $ git add .
+  $ git commit -m "My first commit is HelloGit"

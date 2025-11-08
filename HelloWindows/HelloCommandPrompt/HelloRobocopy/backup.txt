@@ -1,0 +1,2 @@
+robocopy %userprofile%\Documents F:\Storage\%username%\Documents
+  
